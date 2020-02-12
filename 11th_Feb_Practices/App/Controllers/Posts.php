@@ -8,7 +8,7 @@
         public function indexAction() 
         {
             echo "Hello from the index action in posts controller <br>";
-         //   echo "Query String Parameters: <pre>" . htmlspecialchars(print_r($_GET, true)) . "</pre>";
+   
             View::renderTemplate('Posts/index.html');
         }
         public function addNewAction() 

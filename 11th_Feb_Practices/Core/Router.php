@@ -14,7 +14,7 @@
             if ($this->match($url)) {
                 $controller = $this->params['controller'];
                 $controller = $this->convertToStudlyCaps($controller);
-            //    $controller = "App\Controllers\\$controller";
+ 
                 $controller = $this->getNameSpaces() . $controller;
 
                 if (class_exists($controller)) {
@@ -61,20 +61,10 @@
         }
         public function match($url) 
         {
-         /*   foreach ($this->routes as $route => $params) 
-            {
-                if ($url == $route) {
-                    $this->params = $params;
-                    return true;
-                }
-            }
-            return false;
-        */
             // Match fixed url format /controller/action
             foreach ($this->routes as $route => $params) 
             {
                 if (preg_match($route,$url,$match)) {
-                 //   $params = [];
     
                     foreach ($match as $key => $match) {
                         if (is_string($key)) {
