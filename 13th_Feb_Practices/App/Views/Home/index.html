@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %} 
+		<h1> Welcome from Twig Template </h1>
+		<p> {{ name }}</p>
+
+		<ul>
+			{% for pro in property %}
+				<li> {{ pro }} </li>
+			{% endfor %}
+         </ul>
+{% endblock %}
