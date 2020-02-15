@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DASHBOARD </title>
+    </head>
+    <body align="center">
+        <h1> WELCOME...{{ name }} </h1>
+        <div align="left"> 
+            <a href="{{ baseUrl }}admin/products"> <input type="button" name="products" value="MANAGE PRODUCTS"/>
+            <a href="{{ baseUrl }}admin/products/add"> <input type="button" name="addproducts" value="ADD PRODUCTS"/> </a> 
+        </div>
+        <div> 
+            <table border=1 align=center>
+                <tr>
+                    <th> ID </th>
+                    <th> Product Name </th>
+                    <th> Stock Keeping Unit </th>
+                    <th> URL_KEY </th>
+                    <th> Image </th>
+                    <th> Status </th>
+                    <th> Description </th>
+                    <th> Short_Description </th>
+                    <th> Price </th>
+                    <th> Stock </th>
+                    <th> Creation Date </th>
+                    <th> Updatation Date </th>
+                    <th> Action </th>
+                </tr>
+                    {% for product in Products %}
+                        <tr> 
+                            <td> {{ product.ID }} </td>
+                            <td> {{ product.Product_Name }} </td>
+                            <td> {{ product.SKU }} </td>
+                            <td> {{ product.Url_Key }} </td>
+                            <td> <img src=\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\MVC_Practice_Task\Core\Images\{{product.Image}} height=100 width=100> </img> </td>
+                            <td> {{ product.Status }} </td> 
+                            <td> {{ product.Description }} </td> 
+                            <td> {{ product.Short_Description }} </td>
+                            <td> {{ product.Price }} </td>
+                            <td> {{ product.Stock }} </td>
+                            <td> {{ product.Created_At }} </td>
+                            <td> {{ product.Updated_At }} </td>
+                            <td> <a href> EDIT </a> | <a href> DELETE </a> 
+                        </tr>
+                         {% endfor %}
+            </table>
+        </div>
+        <a href> <input type="button" name="categories" value="MANAGE CATEGORIES"/> </a>
+        <a href> <input type="button" name="cmspages" value="MANAGE CMS PAGES"/> </a>
+    </body>
+</html>

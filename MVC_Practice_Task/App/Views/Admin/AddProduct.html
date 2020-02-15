@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ADD PRODUCTS </title>
+    </head>
+    <body align="center">
+        <div>
+        <h1> ADD NEW PRODUCTS </h1>
+        <form action="{{ baseUrl }}admin/products" method="POST">
+            <div> Enter Product Name: <input type="text" name="productname"/> </div>
+            <div> Enter Product Stock Keeping Unit: <input type="text" name="productsku"/> </div>
+            <div> Upload Product Image: <input type="file" name="productimage"/> </div>
+            <div> Enter Product Status: <input type="number" name="productstatus"/> </div>
+            <div> Enter Product Description: <textarea rows=5 cols=20 name="productdiscription"> </textarea> </div>
+            <div> Enter Product Short Description: <input type="text" name="productshortdescription"/> </div>
+            <div> Enter Product Price: <input type="number" name="productprice"/> </div>
+            <div> Enter Product Stock: <input type="number" name="productstock"/> </div>
+            <div> <input type="submit" name="submit" value="SUBMIT"/> </div>
+        </form>
+        </div>
+    </body>
+</html>
