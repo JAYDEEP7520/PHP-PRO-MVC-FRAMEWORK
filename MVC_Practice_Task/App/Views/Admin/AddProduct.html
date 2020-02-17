@@ -5,18 +5,35 @@
     </head>
     <body align="center">
         <div>
-        <h1> ADD NEW PRODUCTS </h1>
-        <form action="{{ baseUrl }}admin/products" method="POST">
-            <div> Enter Product Name: <input type="text" name="productname"/> </div>
-            <div> Enter Product Stock Keeping Unit: <input type="text" name="productsku"/> </div>
-            <div> Upload Product Image: <input type="file" name="productimage"/> </div>
-            <div> Enter Product Status: <input type="number" name="productstatus"/> </div>
-            <div> Enter Product Description: <textarea rows=5 cols=20 name="productdiscription"> </textarea> </div>
-            <div> Enter Product Short Description: <input type="text" name="productshortdescription"/> </div>
-            <div> Enter Product Price: <input type="number" name="productprice"/> </div>
-            <div> Enter Product Stock: <input type="number" name="productstock"/> </div>
-            <div> <input type="submit" name="submit" value="SUBMIT"/> </div>
-        </form>
+            {% if view == "add" %}
+                <h1> ADD NEW PRODUCTS </h1>
+                <form action="{{ baseUrl }}admin/products" method="POST">
+                    <div> Enter Product Name: <input type="text" name="productname"/> </div>
+                    <div> Enter Product Stock Keeping Unit: <input type="text" name="productsku"/> </div>
+                    <div> Upload Product Image: <input type="file" name="productimage"/> </div>
+                    <div> Enter Product Status: <input type="number" name="productstatus"/> </div>
+                    <div> Enter Product Description: <textarea rows=5 cols=20 name="productdiscription"> </textarea> </div>
+                    <div> Enter Product Short Description: <input type="text" name="productshortdescription"/> </div>
+                    <div> Enter Product Price: <input type="number" name="productprice"/> </div>
+                    <div> Enter Product Stock: <input type="number" name="productstock"/> </div>
+                    <div> <input type="submit" name="submit" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
+
+            {% if view == "edit" %}
+                <h1> UPDATE PRODUCTS </h1>
+                <form action="{{ baseUrl }}admin/products" method="POST">    
+                    <div> Enter Product Name: <input type="text" name="productname" value="{{product.Product_Name}}"> </div>
+                    <div> Enter Product Stock Keeping Unit: <input type="text" name="productsku" value="{{product.SKU}}"> </div>
+                    <div> Upload Product Image: <input type="file" name="productimage" value="{{product.Image}}"> </div>
+                    <div> Enter Product Status: <input type="number" name="productstatus" value="{{product.Status}}"> </div>
+                    <div> Enter Product Description: <textarea rows=5 cols=20 name="productdiscription">  {{ product.Description }} </textarea> </div>
+                    <div> Enter Product Short Description: <input type="text" name="productshortdescription" value="{{product.Short_Description}}"> </div>
+                    <div> Enter Product Price: <input type="number" name="productprice" value="{{product.Price}}"> </div>
+                    <div> Enter Product Stock: <input type="number" name="productstock" value="{{product.Stock}}"> </div>
+                    <div> <input type="submit" name="submit" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
         </div>
     </body>
 </html>

@@ -40,7 +40,7 @@
                             <td> {{ product.Stock }} </td>
                             <td> {{ product.Created_At }} </td>
                             <td> {{ product.Updated_At }} </td>
-                            <td> <a href> EDIT </a> | <a href> DELETE </a> 
+                            <td> <a href="{{ baseUrl }}admin/products/edit?id={{product.ID}}"> EDIT </a> | <a href> DELETE </a> 
                         </tr>
                          {% endfor %}
             </table>
