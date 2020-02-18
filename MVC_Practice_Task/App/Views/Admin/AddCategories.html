@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ADD CATEGORIES </title>
+    </head>
+    <body align="center">
+        <div>
+            {% if view == "add" %}
+                <h1> ADD NEW CATEGORIES </h1>
+                <form action="{{ baseUrl }}admin/categories" method="POST">
+                    <div> Enter Category Name: <input type="text" name="categoryname"/> </div>
+                    <div> Upload Category Image: <input type="file" name="categoryimage"/> </div>
+                    <div> Enter Category Status: <input type="number" name="categorystatus"/> </div>
+                    <div> Enter Category Description: <textarea rows=5 cols=20 name="categorydiscription"> </textarea> </div>
+                    <div> Enter Parent Category Name: <input type="text" name="categoryparentcategory"/> </div>
+                    <div> <input type="submit" name="submit_add_category" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
+
+            {% if view == "edit" %}
+                <h1> UPDATE CATEGORIES </h1>
+                <form action="{{ baseUrl }}admin/categories?id={{categories.ID}}" method="POST">    
+                    <div> Enter Category Name: <input type="text" name="categoryname" value="{{categories.Category_Name}}"> </div>
+                    <div> Upload Category Image: <input type="file" name="categoryimage" value="{{categories.Image}}"> </div>
+                    <div> Enter Category Status: <input type="number" name="categorystatus" value="{{categories.Status}}"> </div>
+                    <div> Enter Category Description: <textarea rows=5 cols=20 name="categorydiscription">  {{ categories.Description }} </textarea> </div>
+                    <div> Enter Parent Category Name: <input type="text" name="categoryparentcategory" value="{{categories.Parent_Category}}"> </div>
+                    <div> <input type="submit" name="submit_update_category" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
+        </div>
+    </body>
+</html>

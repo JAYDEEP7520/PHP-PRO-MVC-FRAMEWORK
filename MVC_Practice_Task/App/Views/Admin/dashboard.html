@@ -40,12 +40,72 @@
                             <td> {{ product.Stock }} </td>
                             <td> {{ product.Created_At }} </td>
                             <td> {{ product.Updated_At }} </td>
-                            <td> <a href="{{ baseUrl }}admin/products/edit?id={{product.ID}}"> EDIT </a> | <a href> DELETE </a> 
+                            <td> <a href="{{ baseUrl }}admin/products/edit?id={{product.ID}}"/> EDIT </a> 
+                                | <a href="{{ baseUrl }}admin/products/delete?id={{product.ID}}"/> DELETE </a> 
                         </tr>
                          {% endfor %}
             </table>
         </div>
-        <a href> <input type="button" name="categories" value="MANAGE CATEGORIES"/> </a>
-        <a href> <input type="button" name="cmspages" value="MANAGE CMS PAGES"/> </a>
+        <a href="{{ baseUrl }}admin/categories"> <input type="button" name="categories" value="MANAGE CATEGORIES"/> </a>
+        <a href="{{ baseUrl }}admin/categories/add"> <input type="button" name="addcategories" value="ADD CATEGORIES"/> </a>
+        <div> 
+            <table border=1 align=center>
+                <tr>
+                    <th> ID </th>
+                    <th> Category Name </th>
+                    <th> URL_KEY </th>
+                    <th> Image </th>
+                    <th> Status </th>
+                    <th> Description </th>
+                    <th> Parent Category </th>
+                    <th> Creation Date </th>
+                    <th> Updatation Date </th>
+                    <th> Action </th>
+                </tr>
+                    {% for categories in Categories %}
+                        <tr> 
+                            <td> {{ categories.ID }} </td>
+                            <td> {{ categories.Category_Name }} </td>
+                            <td> {{ categories.Url_Key }} </td>
+                            <td> <img src=\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\MVC_Practice_Task\Core\Images\{{categories.Image}} height=100 width=100> </img> </td>
+                            <td> {{ categories.Status }} </td> 
+                            <td> {{ categories.Description }} </td> 
+                            <td> {{ categories.Parent_Category }} </td>
+                            <td> {{ categories.Created_At }} </td>
+                            <td> {{ categories.Updated_At }} </td>
+                            <td> <a href="{{ baseUrl }}admin/categories/edit?id={{categories.ID}}"/> EDIT </a> 
+                                | <a href="{{ baseUrl }}admin/categories/delete?id={{categories.ID}}"/> DELETE </a> 
+                        </tr>
+                         {% endfor %}
+            </table>
+        </div> 
+        <a href="{{ baseUrl }}admin/cms/pages"> <input type="button" name="cmspages" value="MANAGE CMS PAGES"/> </a>
+        <div> 
+            <table border=1 align=center>
+                <tr>
+                    <th> ID </th>
+                    <th> Page Title </th>
+                    <th> URL_KEY </th>
+                    <th> Status </th>
+                    <th> Content </th>
+                    <th> Creation Date </th>
+                    <th> Updation Date </th>
+                    <th> Action </th>
+                </tr>
+                    {% for cmspages in Cmspages %}
+                        <tr> 
+                            <td> {{ cmspages.ID }} </td>
+                            <td> {{ cmspages.Page_Title }} </td>
+                            <td> {{ cmspages.Url_Key }} </td>
+                            <td> {{ cmspages.Status }} </td> 
+                            <td> {{ cmspages.Content }} </td> 
+                            <td> {{ cmspages.Created_At }} </td>
+                            <td> {{ cmspages.Updated_At }} </td>
+                            <td> <a href="{{ baseUrl }}admin/cms/pages/edit?id={{cmspages.ID}}"/> EDIT </a> 
+                                | <a href="{{ baseUrl }}admin/cms/pages/delete?id={{cmspages.ID}}"/> DELETE </a> 
+                        </tr>
+                         {% endfor %}
+            </table>
+        </div> 
     </body>
 </html>

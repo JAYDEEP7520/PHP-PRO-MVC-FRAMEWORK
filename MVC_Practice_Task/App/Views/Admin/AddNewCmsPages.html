@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ADD NEW CMSPAGES </title>
+    </head>
+    <body align="center">
+        <div>
+            {% if view == "add" %}
+                <h1> ADD NEW CMSPAGES </h1>
+                <form action="{{ baseUrl }}admin/cms/pages/add" method="POST">
+                    <div> Enter Page Title: <input type="text" name="cmspagetitle"/> </div>
+                    <div> Enter Page Status: <input type="number" name="cmspagestatus"/> </div>
+                    <div> Enter Page Content: <textarea rows=5 cols=20 name="cmspagecontent"> </textarea> </div>
+                    <div> <input type="submit" name="submit_add_cmspages" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
+
+            {% if view == "edit" %}
+                <h1> UPDATE CMSPAGES </h1>
+                <form action="{{ baseUrl }}admin/cms/pages/edit?id={{cmspages.ID}}" method="POST">    
+                    <div> Enter Page Title: <input type="text" name="cmspagetitle" value="{{cmspages.Page_Title}}"> </div>
+                    <div> Enter Page Status: <input type="number" name="cmspagestatus" value="{{cmspages.Status}}"> </div>
+                    <div> Enter Page Content: <textarea rows=5 cols=20 name="cmspagecontent">  {{ cmspages.Content }} </textarea> </div>
+                    <div> <input type="submit" name="submit_update_cmspages" value="SUBMIT"/> </div>
+                </form>
+            {% endif %}
+        </div>
+    </body>
+</html>
