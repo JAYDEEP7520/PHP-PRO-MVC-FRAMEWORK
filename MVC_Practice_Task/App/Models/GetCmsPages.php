@@ -18,13 +18,12 @@
                 echo $e->getMessage();
             }
         }
-        public static function getOnProductId($id)
+        public static function getCmsPagesOnId($id)
         {
             try {
                 $conn = static::getDB();
-                $statement = $conn->query("SELECT `ID`, `Product_Name`, `SKU`, `Url_Key`, `Image`, `Status`, 
-                                            `Description`, `Short_Description`, `Price`, `Stock`, 
-                                            `Created_At`, `Updated_At` FROM `products` WHERE `ID`=$id");
+                $statement = $conn->query("SELECT `ID`, `Page_Title`, `Url_Key`, `Status`, `Content`, 
+                                        `Created_At`, `Updated_At` FROM `cms_pages` WHERE `ID`=$id");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 return  $result;
             }
