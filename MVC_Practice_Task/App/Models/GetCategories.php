@@ -33,5 +33,17 @@
                 echo $e->getMessage();
             }
         }
+        public static function getParentCategory()
+        {
+            try {
+                $conn = static::getDB();
+                $statement = $conn->query("SELECT `Parent_Category` FROM `categories`");
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                return  $result;
+            }
+            catch(PDOException $e) {
+                echo $e->getMessage();
+            }
+        }
     }
 ?>

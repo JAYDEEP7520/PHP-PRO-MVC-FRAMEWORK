@@ -2,14 +2,65 @@
 <html>
 	<head>
 		<title> {% block title %} {% endblock %}</title>
-	</head>
-	<body>
-		<nav>
-			<a href="/cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/MVC_Practice_Task/mvc/"> Home </a> | 
-			<a href="/cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/MVC_Practice_Task/mvc/Posts/index"> Posts </a>
-		</nav>
 
-		{% block body %} 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  		<style>
+				footer {
+      			background-color: #555;
+      			color: white;
+      			padding: 15px;
+				}  		
+		</style>
+	</head>
+	<header> 
+		<hr> <h1 align="center"> WELCOME TO E-COMMERCE SAMPLE SITE </h1>
+		<hr>
+			<ul class="nav nav-pills">
+			  <li class="nav-item">
+				<a class="nav-link active" href="/cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/MVC_Practice_Task/mvc/">Home</a>
+			  </li> &nbsp;
+			  <li class="nav-item dropdown">
+					{% for Parentcategory in parentcategory %}
+					<a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="">{{ Parentcategory.Parent_Category }}</a>
+					{% endfor %}
+				<div class="dropdown-menu">
+					{% for Childcategory in childcategory %}
+						  <a class="dropdown-item" href="">{{ Childcategory.Category_Name }}</a>
+					{% endfor %}
+				  <a class="dropdown-item" href="#">Child Categories 2</a>
+				  <a class="dropdown-item" href="#">Child Categories 3</a></div>
+			  </li> &nbsp;
+			  <li class="nav-item">
+				<a class="nav-link active" href="{{ baseUrl }}home/aboutus">About Us</a>
+			  </li> &nbsp; 
+			  <li class="nav-item">
+				<a class="nav-link active" href="{{ baseUrl }}home/contactus">Contact Us</a>
+			  </li> &nbsp;
+			</ul>
+	</header> 
+	<hr>
+	<body>
+		{% block body %}
 		{% endblock %}
 	</body>
+	<hr>
+	<footer class="page-footer font-small blue pt-4">
+  
+		<!-- Grid column -->
+		<div class="footer-copyright text-center py-3" align="center">
+  
+		  <!-- Content -->
+		  <h5 class="text-uppercase">About Website</h5>
+		  <p>Here, is the sample ecommerce website, which made just for personal use.</p>
+  
+	<!-- Copyright -->
+	© 2020 Copyright:
+	  <a href="/cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/MVC_Practice_Task/mvc/"> ECommerce.com</a>
+	</div>
+	<!-- Copyright -->
+  
+  </footer>
 </html>
