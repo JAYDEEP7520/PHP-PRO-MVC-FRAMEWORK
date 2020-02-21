@@ -16,27 +16,33 @@
             $cmspageurlkey = "Home";
             $cmspagecontent = GetCmsPages::getCmsPageContentOnUrlKey($cmspageurlkey);
             $parentcategory = GetCategories::getParentCategory();
+            $childcategory = GetCategories::getChildCategory($parentcategory);
             View::renderTemplate('Home/index.html', ['cmspagecontent' => $cmspagecontent, 
                                                     'cmspageurlkey' => $cmspageurlkey, 
-                                                    'parentcategory' => $parentcategory]);
+                                                    'parentcategory' => $parentcategory,
+                                                    'childcategory' => $childcategory]);
         }
         public function aboutusAction()
         {
             $aboutuspageurlkey = "About-Us";
             $aboutuscontent = GetCmsPages::getAboutUsPage($aboutuspageurlkey);
             $parentcategory = GetCategories::getParentCategory();
+            $childcategory = GetCategories::getChildCategory($parentcategory);
             View::renderTemplate('Home/index.html', ['aboutuscontent' => $aboutuscontent[0], 
                                                     'aboutuspageurlkey' => $aboutuspageurlkey, 
-                                                    'parentcategory' => $parentcategory]);
+                                                    'parentcategory' => $parentcategory,
+                                                    'childcategory' => $childcategory]);
         }
         public function contactusAction()
         {
             $contactuspageurlkey = "Contact-Us";
             $contactuscontent = GetCmsPages::getContactUsPage($contactuspageurlkey);
             $parentcategory = GetCategories::getParentCategory();
+            $childcategory = GetCategories::getChildCategory($parentcategory);
             View::renderTemplate('Home/index.html', ['contactuscontent' => $contactuscontent[0], 
                                                     'contactuspageurlkey' => $contactuspageurlkey, 
-                                                    'parentcategory' => $parentcategory]);
+                                                    'parentcategory' => $parentcategory,
+                                                    'childcategory' => $childcategory]);
         }
         protected function after()
         {

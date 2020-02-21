@@ -37,13 +37,25 @@
         {
             try {
                 $conn = static::getDB();
-                $statement = $conn->query("SELECT `Parent_Category` FROM `categories`");
+                $statement = $conn->query("SELECT DISTINCT(`Parent_Category`) FROM `categories`");
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
                 return  $result;
             }
             catch(PDOException $e) {
                 echo $e->getMessage();
             }
+        }
+        public static function getChildCategory($parentcategory)
+        {
+            try {
+                $conn = static::getDB();
+                $statement = $conn->query("SELECT `Category_Name`, `Url_Key` FROM `categories`");
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
+            }
+            catch(PDOException $e) {
+                echo $e->getMessage();
+            } 
         }
     }
 ?>

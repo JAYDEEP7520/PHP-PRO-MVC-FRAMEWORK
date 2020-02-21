@@ -29,3 +29,4 @@
             View::renderTemplate('Admin/dashboard.html', ['name' => Config::USER_EMAIL]);
         }
     }
+?>

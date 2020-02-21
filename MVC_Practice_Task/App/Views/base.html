@@ -22,17 +22,20 @@
 			  <li class="nav-item">
 				<a class="nav-link active" href="/cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/MVC_Practice_Task/mvc/">Home</a>
 			  </li> &nbsp;
-			  <li class="nav-item dropdown">
-					{% for Parentcategory in parentcategory %}
-					<a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="">{{ Parentcategory.Parent_Category }}</a>
-					{% endfor %}
-				<div class="dropdown-menu">
-					{% for Childcategory in childcategory %}
-						  <a class="dropdown-item" href="">{{ Childcategory.Category_Name }}</a>
-					{% endfor %}
-				  <a class="dropdown-item" href="#">Child Categories 2</a>
-				  <a class="dropdown-item" href="#">Child Categories 3</a></div>
-			  </li> &nbsp;
+			  <div class="dropdown">
+				{% for Parentcategory in parentcategory %}
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+						{{ Parentcategory.Parent_Category }}
+					<span class="caret"></span></button>
+				{% endfor %}
+				<ul class="dropdown-menu">
+				  <li>
+						{% for Childcategory in childcategory %}
+							<a class="dropdown-item" href="{{ baseUrl }}category/view/{{ Childcategory.Url_Key }}">{{ Childcategory.Category_Name }}</a>
+						{% endfor %}
+					</li>
+				</ul>
+			  </div> &nbsp;
 			  <li class="nav-item">
 				<a class="nav-link active" href="{{ baseUrl }}home/aboutus">About Us</a>
 			  </li> &nbsp; 

@@ -66,6 +66,20 @@
         </div>
     {% endif %}
 
+    {% if view == "view" %}
+      {% for Products in products %}
+        <a href="{{ baseUrl }}Product/view/{{ Products.Url_Key }}"><img src="\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\MVC_Practice_Task\Core\Images\{{Products.Image}}" width="200" height="300"></img></a>    
+        <div style="position: relative; left: 200px; top: -200px;">    
+          <label> <b>Product:</b> </label> <div><a href="{{ baseUrl }}Product/view/{{ Products.Url_Key }}"> {{ Products.Product_Name }} </a> </div>
+          <label> <b>Price:</b> </label> <p> {{ Products.Price }} </p>
+        </div>
+      {% endfor %}
+      
+      {% if urlkey == "urlkey" %}
+          
+      {% endif %}
+    {% endif %}
+
     {% if aboutuspageurlkey == "About-Us" %}
         <h1 align="center"> ABOUT </h1>
         <p> {{ aboutuscontent.Content }} </p>
