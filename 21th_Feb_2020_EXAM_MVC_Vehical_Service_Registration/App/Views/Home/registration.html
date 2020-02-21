@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> REGISTRATION </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+          
+    </head>
+    
+    <body>
+        <h1 align="center"> WELCOME TO VEHICAL MANAGEMENT SYSTEM </h1> &nbsp;
+        <div align="center">
+            <h3> REGISTER HERE </h3>
+            <form action="{{ baseUrl }}/Home/index" method="POST">
+                <div> <label> <h4> FIRSTNAME:</h4> </label> </div>
+                <div> <input type="text" name="firstname"/> </div>
+
+                <div> <label> <h4> LASTNAME:</h4> </label> </div>
+                <div> <input type="text" name="lastname"/> </div>
+
+                <div> <label> <h4> EMAIL:</h4> </label> </div>
+                <div> <input type="email" name="email"/> </div>
+
+                <div> <label> <h4> PASSWORD:</h4> </label> </div>
+                <div> <input type="password" name="password"/> </div>
+
+                <div> <label> <h4> PHONE NUMBER:</h4> </label> </div>
+                <div> <input type="number" name="phonenumber"/> </div>
+
+                <div> <label> <h4> STREET:</h4> </label> </div>
+                <div> <input type="text" name="street"/> </div>
+
+                <div> <label> <h4> CITY:</h4> </label> </div>
+                <div> <select name="city">
+                        <option value="Mahesana"> Mahesana </option>
+                        <option value="Ahmedabad"> Ahmedabad </option>
+                        <option value="Patan"> Patan </option>
+                        <option value="Gandhinagar"> Gandhinagar </option>
+                        <option value="Surat"> Surat </option>
+                     </select> </div>
+                
+                <div> <label> <h4> STATE:</h4> </label> </div>
+                    <div> <select name="state">
+                             <option value="Gujarat"> Gujarat </option>
+                             <option value="Uttar Paredesh"> Uttar Paredesh </option>
+                             <option value="Maharashtra"> Maharashtra </option>
+                             <option value="Punjab"> Punjab </option>
+                             <option value="Andhra Pradesh"> Andhra Pradesh </option>
+                          </select> </div>
+                
+                <div> <label> <h4> COUNTRY:</h4> </label> </div>
+                    <div> <select name="country">
+                                   <option value="India"> India </option>
+                                   <option value="Australia"> Australia </option>
+                                   <option value="England"> England </option>
+                                   <option value="Pakistan"> Pakistan </option>
+                                   <option value="New Zeland"> New Zeland </option>
+                                </select> </div>
+
+                <div> <label> <h4> ZIPCODE:</h4> </label> </div>
+                <div> <input type="number" name="zipcode"/> </div> &nbsp;
+
+                <div> <input type="submit" name="registration" value="REGISTER"></div>
+            </form>
+        </div>
+    </body>
+</html>

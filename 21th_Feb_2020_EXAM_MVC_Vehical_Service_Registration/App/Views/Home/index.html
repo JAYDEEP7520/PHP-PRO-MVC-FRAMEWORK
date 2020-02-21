@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Home </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+          
+    </head>
+    <body>
+        <h1 align="center"> WELCOME TO VEHICAL MANAGEMENT SYSTEM </h1> &nbsp;
+        <div align="center">
+            <form action="{{ baseUrl }}/Home/login?id={{ userid }}" method="POST">
+                <div> <label> <h4> EMAIL:</h4> </label> </div>
+                <div> <input type="email" name="email"/> </div>
+
+                <div> <label> <h4> PASSWORD:</h4> </label> </div>
+                <div> <input type="password" name="password"/> </div> &nbsp;
+                <div> <input type="submit" name="login" value="LOG IN"></div>
+            </form>
+                <div> <h4> OR </h4></div>
+                <div> <a href="{{ baseUrl }}/Home/registration"><input type="button" name="registration" value="REGISTRATION"></a></div>
+        </div>
+    </body>
+</html>

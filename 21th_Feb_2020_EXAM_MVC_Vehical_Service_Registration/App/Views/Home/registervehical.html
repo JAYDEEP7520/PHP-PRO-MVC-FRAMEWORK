@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> VEHICAL SERVICE REGISTRATION </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+                $( function() {
+                    $( "#datepicker" ).datepicker({ minDate : 0});
+                } );
+  </script>
+          
+    </head>
+    
+    <body>
+        <h1 align="center"> WELCOME TO VEHICAL MANAGEMENT SYSTEM </h1> &nbsp;
+        <div align="center">
+            <h3> REGISTER YOUR VEHICAL SERVICE HERE </h3>
+            <form action="{{ baseUrl }}/Home/registervehicalservice?id={{ userid }}" method="POST">
+                <div> <label> <h4> VEHICAL SERVICE TITLE:</h4> </label> </div>
+                <div> <input type="text" name="title"/> </div>
+
+                <div> <label> <h4> VEHICAL NUMBER:</h4> </label> </div>
+                <div> <input type="number" name="vehicalnumber"/> </div>
+
+                <div> <label> <h4> LICENCE NUMBER:</h4> </label> </div>
+                <div> <input type="number" name="licencenumber"/> </div>
+
+                <div> <label> <h4> SELECT DATE:</h4> </label> </div>
+                <div> <input type="text" name="datepicker" id="datepicker"> </div>
+
+                <div> <label> <h4> SELECT TIME:</h4> </label> </div>
+                <div> <select name="timeslot">
+                    <option value="9-10"> 9-10 </option>
+                    <option value="10-11"> 10-11 </option>
+                    <option value="11-12"> 11-12 </option>
+                    <option value="12-1"> 12-1 </option>
+                    <option value="1-2"> 1-2 </option>
+                    <option value="2-3"> 2-3 </option>
+                    <option value="3-4"> 3-4 </option>
+                    <option value="4-5"> 4-5 </option>
+                    <option value="5-6"> 5-6 </option>
+                 </select> </div> &nbsp;
+
+                <div> <label> <h4> VEHICAL ISSUE:</h4> </label> </div>
+                <div> <textarea rows="5" cols="40" name="issue"> </textarea> </div>
+
+                <div> <label> <h4> VEHICAL SERVICE CENTER:</h4> </label> </div>
+                <div> <select name="servicecenter">
+                        <option value="Mahesana"> Mahesana </option>
+                        <option value="Ahmedabad"> Ahmedabad </option>
+                        <option value="Patan"> Patan </option>
+                        <option value="Gandhinagar"> Gandhinagar </option>
+                        <option value="Surat"> Surat </option>
+                     </select> </div> &nbsp;
+
+                <div> <input type="submit" name="registerservice" value="REGISTER SERVICE"></div>
+            </form>
+        </div>
+
+        <div align=center>
+            {% if displaytable == "true" %}
+            <table border=1>
+                <tr>
+                    <th> Service ID </th>
+                    <th> User ID </th>
+                    <th> Title </th>
+                    <th> Vehical Number </th>
+                    <th> User Licence Number </th>
+                    <th> Date </th>
+                    <th> Timeslot </th>
+                    <th> Vehical Issue </th>
+                    <th> Service Center </th>
+                    <th> Status </th>
+                    <th> Creation Date </th>
+                </tr>
+                {% for vehcialservice in Vehcial_Service %}
+                        <tr> 
+                            <td> {{ Vehcial_Service.Service_Id }} </td>
+                            <td> {{ Vehcial_Service.User_Id }} </td>
+                            <td> {{ Vehcial_Service.Title }} </td>
+                            <td> {{ Vehcial_Service.Vehical_Number }} </td>
+                            <td> {{ Vehcial_Service.User_Licence_Number }} </td> 
+                            <td> {{ Vehcial_Service.Date }} </td> 
+                            <td> {{ Vehcial_Service.Timeslot }} </td>
+                            <td> {{ Vehcial_Service.Vehical_Issue }} </td>
+                            <td> {{ Vehcial_Service.Service_Center }} </td>
+                            <td> {{ Vehcial_Service.Status }} </td>
+                            <td> {{ Vehcial_Service.Created_Date }} </td>
+                        </tr>
+            {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,6 @@
+#Remove index.php from the request but maintain the query string
+ReWriteEngine on
+ReWriteBase /cybercom/PHP_PRO_MVC_FRAMEWORK/PHP-PRO-MVC-FRAMEWORK/21th_Feb_2020_EXAM_MVC_Vehical_Service_Registration/Public/
+ReWriteCond %{REQUEST_FILENAME} !-f
+ReWriteCond %{REQUEST_FILENAME} !-d
+ReWriteRule ^(.*)$ index.php?$1 [L,QSA]

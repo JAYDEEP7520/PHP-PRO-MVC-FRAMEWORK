@@ -1,0 +1,17 @@
+[14-Feb-2020 05:54:21 Europe/Berlin] 
+ Thrown in 'C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\Core\Router.php' on line40
+[14-Feb-2020 06:14:27 Europe/Berlin] 
+ Thrown in 'C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\Core\Router.php' on line40
+[14-Feb-2020 06:24:53 Europe/Berlin] 
+ Thrown in 'C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\Core\Router.php' on line40
+[14-Feb-2020 06:24:53 Europe/Berlin] PHP Fatal error:  Uncaught Twig\Error\LoaderError: Unable to find template "404.html" (looked into: ../App/Views). in C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Loader\FilesystemLoader.php:227
+Stack trace:
+#0 C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Loader\FilesystemLoader.php(131): Twig\Loader\FilesystemLoader->findTemplate('404.html')
+#1 C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Environment.php(261): Twig\Loader\FilesystemLoader->getCacheKey('404.html')
+#2 C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Environment.php(309): Twig\Environment->getTemplateClass('404.html')
+#3 C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Environment.php(277): Twig\Environment->load('404.html')
+#4 C:\xampp\htdocs\cybercom\PHP in C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\vendor\twig\twig\src\Loader\FilesystemLoader.php on line 227
+[14-Feb-2020 06:27:53 Europe/Berlin] 
+ Thrown in 'C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\Core\Router.php' on line40
+[14-Feb-2020 06:28:15 Europe/Berlin] 
+ Thrown in 'C:\xampp\htdocs\cybercom\PHP_PRO_MVC_FRAMEWORK\PHP-PRO-MVC-FRAMEWORK\14th_Feb_Practices\Core\Router.php' on line35
